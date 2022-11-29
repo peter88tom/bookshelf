@@ -12,3 +12,13 @@ function TestComponent(){
 }
 
 export default TestComponent;
+
+/*
+A valid must return a single  element
+
+something like this is valid
+<div> </div>
+
+or <> </>
+
+*/
