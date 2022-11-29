@@ -5,10 +5,12 @@ import { AddBook } from './AddBook';
 
 
 // Compose BookList and AddBook togethere
-function Bookshelf(){
+// Bookshelf is a parent component since it combine other components
+// Component function only ever take one argument,if any: the props
+function Bookshelf(props){
   return (
       <div>
-          <h1>My Bookshelf</h1>
+          <h1>{props.name}'s Bookshelf</h1>
           <BookList />
           <AddBook />
       </div>
