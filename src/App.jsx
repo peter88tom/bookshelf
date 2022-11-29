@@ -1,14 +1,23 @@
 import logo from './logo.svg';
 import styles from './App.module.css';
-import TestComponent  from './TestComponent';
+import { BookList } from './BookList';
+import { AddBook } from './AddBook';
 
+
+// Compose BookList and AddBook togethere
+function Bookshelf(){
+  return (
+      <div>
+          <h1>My Bookshelf</h1>
+          <BookList />
+          <AddBook />
+      </div>
+  );
+}
 
 function App() {
   return (
-    <div>
-      <h1>Welcome</h1>
-      <TestComponent />
-    </div>
+    <Bookshelf />
   );
 }
 
