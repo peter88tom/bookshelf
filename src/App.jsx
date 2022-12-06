@@ -24,3 +24,10 @@ function App() {
 }
 
 export default App;
+
+
+// Solid primitives  - Are the building blocks of interactivity of the app
+// .  - Example of primitive is Signal
+//    - Effect is another reactive primitive which you can use to listedn for and instant change
+//       - Effect is registered as listener on signal
+// components are the building block of views in a solid app
