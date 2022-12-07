@@ -1,4 +1,4 @@
-import { createSignal } from 'solid-js';
+import { createSignal, Show } from 'solid-js';
 import { BookList } from './BookList';
 import { AddBook } from './AddBook';
 
@@ -21,11 +21,26 @@ function Bookshelf(props){
 
   const [books, setBooks] = createSignal(initialBooks);
 
+  // Hide form by default
+  const [showForm, setShowForm] = createSignal(false);
+
+  // button to control hide and showing the form
+  // When this buttton is clicked, set opposite value from the current value
+  const toggleForm = () => setShowForm(!showForm());
+
   return (
       <div>
           <h1>{props.name}'s Bookshelf</h1>
           <BookList books={books()} />
+          <Show
+            when={showForm()}
+            fallback={<button onClick={toggleForm}>Add Book</button>}
+          >
+
           <AddBook setBooks={setBooks} />
+          <button onClick={toggleForm}>Finish Adding Book</button>
+          </Show>
+          
       </div>
   );
 }
