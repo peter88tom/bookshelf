@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import styles from './App.module.css';
+import { createSignal } from 'solid-js';
 import { BookList } from './BookList';
 import { AddBook } from './AddBook';
+
 
 
 // Compose BookList and AddBook togethere
 // Bookshelf is a parent component since it combine other components
 // Component function only ever take one argument,if any: the props
+
+
+
+const initialBooks  = [
+	{ title: "Code Complete", author: "Steve McConnell" },
+	{ title: "The Hobbit", author: "J.R.R. Tolkien" },
+	{ title: "Living a Feminist Life", author: "Sarah Ahmed" },
+	{ title: "Things fall apart", author: "Sarah Ahmed" },
+];
+
 function Bookshelf(props){
+
+  const [books, setBooks] = createSignal(initialBooks);
+
   return (
       <div>
           <h1>{props.name}'s Bookshelf</h1>
-          <BookList />
-          <AddBook />
+          <BookList books={books()} />
+          <AddBook setBooks={setBooks} />
       </div>
   );
 }
 
 function App() {
   return (
-    <Bookshelf />
+    <Bookshelf name="Solid"/>
   );
 }
 
