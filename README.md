@@ -13,4 +13,4 @@ In this tutorial you will learn how to;
 
 ## Deployment
 
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+I have  deployed this application on Netlify, check it out here https://bookshelf-with-solidjs.netlify.app/
