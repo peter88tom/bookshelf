@@ -73,6 +73,7 @@ export function AddBook(props){
 
 				/>
 			</div>
+			<br />
 
 			
 				<button
@@ -81,6 +82,7 @@ export function AddBook(props){
 						e.preventDefault();
 						setQuery(input())
 					}}
+					class="btn btn-primary"
 					>
 					Search
 				</button>
@@ -99,7 +101,7 @@ export function AddBook(props){
 							onClick={(e) => {
 								e.preventDefault();
 								props.setBooks((books) => [...books, book]);
-							}}>
+							}} class="btn btn-primary">
 							Add
 							</button>
 						</li>

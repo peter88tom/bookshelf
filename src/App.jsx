@@ -34,11 +34,11 @@ function Bookshelf(props){
           <BookList books={books()} />
           <Show
             when={showForm()}
-            fallback={<button onClick={toggleForm}>Add Book</button>}
+            fallback={<button onClick={toggleForm} class="btn btn-primary">Add Book</button>}
           >
 
           <AddBook setBooks={setBooks} />
-          <button onClick={toggleForm}>Finish Adding Book</button>
+          <button onClick={toggleForm} class="btn btn-primary">Finish Adding Book</button>
           </Show>
           
       </div>
